@@ -178,10 +178,35 @@
         }
         .search-input {
             padding: 10px;
-            width: 200px;
+            width: 100%;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
+        .full-width-header {
+            width: 100%; /* Makes the container span the full width of the page */
+            text-align: center; /* Center aligns any content inside */
+        }
+
+        .full-width-header img {
+            width: 100%; /* Makes the image span the full width of the container */
+            height: auto; /* Maintains the aspect ratio */
+            display: block; /* Removes any space below the image */
+        }
+
+        /* Location Header section */
+        .location-header {
+            background-image: var(--header-background, linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("default-image-url.jpg"));
+            height: 17vh; /* Adjusted height */
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-size: cover;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+        }
+
+
 
     </style>
     
@@ -192,12 +217,10 @@
 
     <!-- Header -->
     <div class="header">
-        <img src="https://github.com/BRHoyoVerseBuilds/BR-HoYoVerse-Builds/blob/main/img/homepage/header.png?raw=true" alt="BR's HoyoVerse Builds">
+        <a href="https://brhoyoversebuilds.github.io/BR-Character-Builds/">
+            <img src="https://github.com/BRHoyoVerseBuilds/BR-Character-Builds/blob/main/img/header.png?raw=true" alt="BR's HoyoVerse Builds">
+        </a>          
         <div class="header-right">
-                <!-- Search Input -->
-                <div class="search-container">
-                    <input type="text" id="searchInput" class="search-input" placeholder="Search for characters..." onkeyup="searchCharacters()">
-                </div>
             <a href="https://github.com/BRHoyoVerseBuilds/BR-HoYoVerse-Builds/releases/download/Android/br_hoyoverse.apk" class="btn" download>
                 <i class="fa fa-download"></i> Download The Android App!
             </a>            
@@ -220,7 +243,6 @@
     <!-- Filter Buttons -->
     <div class="btn-container" id="myBtnContainer">
         <button class="btn active" onclick="filterSelection('all')"> Show All</button>
-        <button class="btn" onclick="filterSelection('factions')"> Factions</button>
         <button class="btn" onclick="filterSelection('wind')"> Wind</button>
         <button class="btn" onclick="filterSelection('imaginary')"> Imaginary</button>
         <button class="btn" onclick="filterSelection('lightning')"> Lightning</button>
@@ -230,20 +252,19 @@
         <button class="btn" onclick="filterSelection('physical')"> Physical</button>
     </div>
 
+
+
+    <div class="location-header" style="--header-background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://github.com/BRHoyoVerseBuilds/BR-Star-Rail-Builds/blob/main/img/express2.png?raw=true');">
+        <div class="hero-text">
+            <h1>Astral Express</h1>
+            <p>"The train that the Akivili, Aeon of Trailblaze, once rode upon.<br>It travels on the star rail to traverse between the worlds."</p>
+        </div>
+    </div>  
+    
 <!-- Character Info Grid Sorted by Name -->
 <div class="row">
-    <!-- Astral Express -->
-    <div class="column factions wind imaginary lightning quantum ice fire physical">
-        <div class="image-container">
-            <a href="https://honkai-star-rail.fandom.com/wiki/Astral_Express">
-                <img src="https://preview.redd.it/edited-a-16-9-phone-wallpaper-of-the-loading-screen-if-v0-mwvjppau2kya1.png?width=640&crop=smart&auto=webp&s=22a548b16dee4648fd9cc7e7019dd8cc00cd3142" alt="astral_express">
-            </a>
-            <h4>Astral Express</h4>
-        </div>
-    </div>
 
-
-    <!-- Tralblazer 1's Character Card -->
+<!-- Tralblazer 1's Character Card -->
 <div class="column physical">
     <a href="https://game8.co/games/Honkai-Star-Rail/archives/405766">
         <img src="https://rerollcdn.com/STARRAIL/Characters/Full/8001.png" alt="Trailblazer">
@@ -253,6 +274,26 @@
     <p>Starter Character</p>
 </div>
 
+<!-- Tralblazer 2'nd Character Card -->
+<div class="column fire">
+    <a href="https://game8.co/games/Honkai-Star-Rail/archives/405740">
+        <img src="https://rerollcdn.com/STARRAIL/Characters/Full/8003.png" alt="Trailblazer">
+    </a>
+    <h4>Trailblazer <br> (Preservation)</h4>
+    <p>★★★★★</p>
+    <p>Aquired after completeing the<br>"Roads to the Past Have Long Been Closed"<br>trailblaze mission</p>
+</div>
+
+<!-- Tralblazer 3'rd Character Card -->
+<div class="column imaginary">
+    <a href="https://game8.co/games/Honkai-Star-Rail/archives/453693">
+        <img src="https://rerollcdn.com/STARRAIL/Characters/Full/3022.png" alt="Trailblazer">
+    </a>
+    <h4>Trailblazer <br> (Harmony)</h4>
+    <p>★★★★★</p>
+    <p>Aquired after completeing the<br>"Then Wake to Weep"<br>trailblaze mission</p>
+</div>
+
 <!-- March 7th Character Card -->
 <div class="column ice">
     <a href="https://game8.co/games/Honkai-Star-Rail/archives/405746">
@@ -260,24 +301,69 @@
     </a>
     <h4>March 7th <br> (Preservation)</h4>  
     <p>★★★★</p>
-    <p>Last Banner: All Banners</p>
+    <p>Last Banner:<br>All Banners</p>
 </div>
 
+<!-- March 7th Character Card -->
+<div class="column imaginary">
+    <a href="https://game8.co/games/Honkai-Star-Rail/archives/456967">
+        <img src="https://rerollcdn.com/STARRAIL/Characters/Full/3029.png" alt="March 7th ">
+    </a>
+    <h4>March 7th <br> (Hunt)</h4>  
+    <p>★★★★</p>
+    <p>Aquired after completeing the<br>"March to Mastery:<br>A Star is Born."<br>trailblaze continuance</p>
+</div>
 
+<!-- March 7th Character Card -->
+<div class="column wind">
+    <a href="https://game8.co/games/Honkai-Star-Rail/archives/405749">
+        <img src="https://rerollcdn.com/STARRAIL/Characters/Full/1002.png" alt="Dan Heng">
+    </a>
+    <h4>Dan Heng</h4>  
+    <p>★★★★</p>
+    <p>Last Banner:<br>All Banners</p>
+</div>
 
+<div class="column imaginary">
+    <a href="https://game8.co/games/Honkai-Star-Rail/archives/417235">
+        <img src="https://rerollcdn.com/STARRAIL/Characters/Full/3002.png" alt="Dan Heng Imbibitor Lunae">
+    </a>
+    <h4>Dan Heng<br>Imbibitor Lunae</h4>
+    <p>★★★★★</p>
+    <p>Last Banner:<br>Oct 22 - Nov 13 2024</p>
+</div>
+
+<div class="column fire">
+    <a href="https://game8.co/games/Honkai-Star-Rail/archives/405742">
+        <img src="https://rerollcdn.com/STARRAIL/Characters/Full/1003.png" alt="Himeko">
+    </a>
+    <h4>Himeko</h4>
+    <p>★★★★★</p>
+    <p>Last Banner:<br>Standard Banner</p>
+</div>
+
+<div class="column imaginary">
+    <a href="https://game8.co/games/Honkai-Star-Rail/archives/405763">
+        <img src="https://rerollcdn.com/STARRAIL/Characters/Full/1004.png" alt="Welt">
+    </a>
+    <h4>Welt</h4>
+    <p>★★★★★</p>
+    <p>Last Banner:<br>Standard Banner</p>
+</div>
 
 </div>
     
-<div class="row">
-    <!-- Facton -->
-    <div class="column factions wind imaginary lightning quantum ice fire physical">
-        <div class="image-container">
-            <a href="https://honkai-star-rail.fandom.com/wiki/Astral_Express">
-                <img src="https://github.com/BRHoyoVerseBuilds/BR-Star-Rail-Builds/blob/main/img/factions/lofu.png?raw=true" alt="xianzhou_luofu">
-            </a>
-            <h4>The Xianzhou Luofu</h4>
-        </div>
+<br>
+<br>
+
+<div class="location-header" style="--header-background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://github.com/BRHoyoVerseBuilds/BR-Star-Rail-Builds/blob/main/img/lofu.png?raw=true');">
+    <div class="hero-text">
+        <h1>The Xianzhou Luofu</h1>
+        <p>"One of the six flagships of the Xianzhou Alliance, shooting towards the Lord of The Hunt's destined enemy."</p>
     </div>
+</div>  
+
+<div class="row">
 
     <div class="column lightning">
         <a href="https://game8.co/games/Honkai-Star-Rail/archives/405756">
@@ -285,7 +371,7 @@
         </a>
         <h4>Jing Yuan</h4>
         <p>★★★★★</p>
-        <p>Last Banner: Feb 29 - March 26 2024.</p>
+        <p>Last Banner:<br>Feb 29 - March 26 2024.</p>
     </div>
 
     <div class="column imaginary">
@@ -294,8 +380,57 @@
         </a>
         <h4>Yukong</h4>
         <p>★★★★</p>
-        <p>Last Banner: All Banners</p>
+        <p>Last Banner:<br>All Banners</p>
     </div>
+
+    <div class="column quantum">
+        <a href="https://game8.co/games/Honkai-Star-Rail/archives/405760">
+            <img src="https://rerollcdn.com/STARRAIL/Characters/Full/3003.png" alt="Fu Xuan">
+        </a>
+        <h4>Fu Xuan</h4>
+        <p>★★★★★</p>  <!-- Using stars instead of the numeric rating -->
+        <p>Last Banner:<br>May 29 - Jun 18 2024</p>
+    </div>
+
+    
+<div class="column wind">
+    <a href="https://game8.co/games/Honkai-Star-Rail/archives/428642">
+        <img src="https://rerollcdn.com/STARRAIL/Characters/Full/3008.png" alt="Huohuo">
+    </a>
+    <h4>Huohuo</h4>
+    <p>★★★★★</p>  <!-- Using stars instead of the numeric rating -->
+    <p>Last Banner:<br>Jul 30 - Aug 21 2024</p>
+</div>
+
+
+<div class="column quantum">
+    <a href="https://game8.co/games/Honkai-Star-Rail/archives/431761">
+        <img src="https://rerollcdn.com/STARRAIL/Characters/Full/3013.png" alt="Xueyi">
+    </a>
+    <h4>Xueyi</h4>
+    <p></p>  <!-- Using stars instead of the numeric rating -->
+    <p>Last Banner:<br> All Banners</p>
+</div>
+
+<div class="column lightning">
+    <a href="https://game8.co/games/Honkai-Star-Rail/archives/405753">
+        <img src="https://rerollcdn.com/STARRAIL/Characters/Full/1211.png" alt="Bailu">
+    </a>
+    <h4>Bailu</h4>
+    <p>★★★★★</p>  <!-- Using stars instead of the numeric rating -->
+    <p>Last Banner:<br>Standard Banner</p>
+</div>
+
+<div class="column ice">
+    <a href="https://game8.co/games/Honkai-Star-Rail/archives/411783">
+        <img src="https://rerollcdn.com/STARRAIL/Characters/Full/3005.png" alt="Jingliu">
+    </a>
+    <h4>Jingliu</h4>
+    <p>★★★★★</p>  <!-- Using stars instead of the numeric rating -->
+    <p>Last Banner:<br>Apr 17 - May 7 2024</p>
+</div>
+
+
 
 
 </div>
